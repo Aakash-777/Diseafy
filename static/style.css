@@ -282,3 +282,44 @@ canvas {
     z-index: 100;
   }
 
+
+  .dis_container{
+    margin-top: 25px;
+    display: none;
+    flex-direction: column;
+    mask-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.522));
+  }
+
+  .dis_box{
+    border: 2px solid grey;
+    border-radius: 20px; 
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    color:black;
+    height: 55px;
+    overflow:hidden;
+    transition: height 0.3s ease;
+  }
+  .dis_box:hover{
+    height: 150px;
+  }
+
+  .op_perc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .det{
+    margin-top: 10px;
+  }
+
+  .op{
+    color: rgb(196, 0, 0);
+  }
+
+  .dis_box h1{
+    width: 350px;
+  }
+

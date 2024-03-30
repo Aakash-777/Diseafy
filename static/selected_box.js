@@ -1,4 +1,6 @@
 
+// import anime from 'animejs/lib/anime.es.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const sympList = document.getElementById('symp-list');
     const selectedList = document.getElementById('selected');
@@ -85,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkAndSubmitForm() {
 
+        disc=document.querySelector('.dis_container');
+        disc.style.opacity=0;
+
         if (n > 0){
             // Using Fetch API to send the array to Flask server
             fetch('/predict', {
@@ -103,15 +108,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 return res.json();
             })
             .then(data => {
-                // Update the HTML content with the predicted result
-                document.getElementById('op').textContent = data.result;
-                document.getElementById('det').textContent = data.details;
+
+                // console.log(data);
                 document.getElementById('you').textContent = "You may have";
+                document.querySelector('.dis_container').style.display='flex';
+
+                for(let i = 0; i < data.length; i++){
+                    document.querySelector(`#dis${i+1} .op`).textContent=data[i].disease;
+                    document.querySelector(`#dis${i+1} .perc`).textContent=data[i].percentage+"%";
+                    document.querySelector(`#dis${i+1} .det`).textContent=data[i].details;
+                }
+                
+                anime({
+                    targets: disc,
+                    opacity: 1,
+                    duration: 500, 
+                    easing: 'easeInOutQuad' 
+                });
+
 
             })
             .catch(error => {
                 console.log('ERROR', error);
-                // Handle the error, e.g., display an error message on the page
             });
 
 
