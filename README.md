@@ -7,4 +7,4 @@ User needs to select the symptoms available in the list , there are around 133 s
 and our model can predict 5 diseases the user might be suffering from with their probabilities shown in percentage,
 Also a small info about the diseases are shown along with it on hover.
 
-The user can select and deselect any symptom any number of times enhancing user exeperience.
+The user can select and deselect any symptom any number of times enhancing user experience.
