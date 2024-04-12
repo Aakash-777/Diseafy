@@ -34,13 +34,13 @@ def predict():
     dis=['(vertigo) Paroymsal  Positional Vertigo', 'AIDS', 'Acne',
        'Alcoholic hepatitis', 'Allergy', 'Arthritis', 'Bronchial Asthma',
        'Cervical spondylosis', 'Chicken pox', 'Chronic cholestasis',
-       'Common Cold', 'Dengue', 'Diabetes ', 'Dimorphic hemmorhoids(piles)',
+       'Common Cold', 'Dengue', 'Diabetes ', 'Dimorphic hemmorhoids (piles)',
        'Drug Reaction', 'Fungal infection', 'GERD', 'Gastroenteritis',
        'Heart attack', 'Hepatitis B', 'Hepatitis C', 'Hepatitis D',
        'Hepatitis E', 'Hypertension ', 'Hyperthyroidism', 'Hypoglycemia',
        'Hypothyroidism', 'Impetigo', 'Jaundice', 'Malaria', 'Migraine',
        'Osteoarthristis', 'Paralysis (brain hemorrhage)',
-       'Peptic ulcer diseae', 'Pneumonia', 'Psoriasis', 'Tuberculosis',
+       'Peptic ulcer disease', 'Pneumonia', 'Psoriasis', 'Tuberculosis',
        'Typhoid', 'Urinary tract infection', 'Varicose veins', 'hepatitis A']
     
     output = lm.predict(np.array([pred]))
@@ -53,8 +53,11 @@ def predict():
     print(top_5_dict)
 
     def get_disease_details(dis):
+        # print(dis)
         for i in disease_data['diseases']:
             if i['disease_name'].replace(" ", "").lower() == dis.replace(" ", "").lower():
+                # print(i['disease_name'].replace(" ", "").lower())
+                # print(dis.replace(" ", "").lower())
                 return i['details']
         return "Info not available"
 
