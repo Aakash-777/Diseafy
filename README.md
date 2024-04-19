@@ -10,3 +10,6 @@ Also, a small information about the diseases are shown along with it on hover.
 
 The user can select and deselect any symptom any number of times enhancing user experience. Also, they can select any number of symptoms.
 Currently, there are 42 diseases that our model can predict, we will improve our model with more data in the future.
+
+For more details like Usage -> <br>
+https://github.com/Aakash-777/Diseafy_Deployment
